@@ -103,15 +103,28 @@ section {
   scroll-margin-top: 80px; /* Adjust value based on navbar height */
 }
 
+/* Section headers */
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  position: relative;
+}
+
 /* Hero Section */
 .hero {
   background: url("images/techmart_hero.png") no-repeat center center/cover;
-  height: 600px;
+  height: 100svh;
+  width: 100%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
 }
 .hero::before {
   content: "";
@@ -144,12 +157,7 @@ section {
   padding: 40px 20px;
   background-color: #fff;
 }
-.featured-products h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 2rem;
-  position: relative;
-}
+
 .featured-products h2::after {
   content: "";
   position: absolute;
@@ -182,7 +190,9 @@ section {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   position: relative;
   width: 300px;
 }
@@ -225,11 +235,7 @@ section {
   align-items: center;
   text-align: center;
 }
-.new-product h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  position: relative;
-}
+
 .new-product h2::after {
   content: "";
   position: absolute;
@@ -303,12 +309,7 @@ section {
   padding: 40px 20px;
   background-color: #fff;
 }
-.gallery h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 2rem;
-  position: relative;
-}
+
 .gallery h2::after {
   content: "";
   position: absolute;
@@ -340,12 +341,7 @@ section {
   padding: 40px 20px;
   background-color: var(--bg-color);
 }
-.contact h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  position: relative;
-}
+
 .contact h2::after {
   content: "";
   position: absolute;
@@ -453,13 +449,19 @@ footer p {
   .hamburger {
     display: flex;
   }
+
   /* Hide the full nav menu by default */
   nav ul {
     display: none;
     flex-direction: column;
+    position: absolute;
+    top: 60px; /* directly below navbar */
+    left: 0;
     width: 100%;
     background-color: var(--primary-color);
-    margin-top: 10px;
+    padding: 20px 0;
+    margin-top: 0;
+    z-index: 999;
   }
   /* When toggled open, display the nav menu */
   nav ul.open {
